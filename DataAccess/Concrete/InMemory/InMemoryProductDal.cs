@@ -15,9 +15,9 @@ namespace DataAccess.Concrete.InMemory
         {
             _products = new List<Product>
             {
-                    new Product{ ProductId=1,CategoryId = 1,ProductName="Bardak",UnitPrice=15,UnitInStock=15 },
-                    new Product{ ProductId=2,CategoryId = 1,ProductName="Kamera",UnitPrice=500,UnitInStock=3 },
-                    new Product{ ProductId=3,CategoryId = 2,ProductName="Vazo",UnitPrice=15,UnitInStock=6 }
+                    new Product{ ProductId=1,CategoryId = 1,ProductName="Bardak",UnitPrice=15,UnitsInStock=15 },
+                    new Product{ ProductId=2,CategoryId = 1,ProductName="Kamera",UnitPrice=500,UnitsInStock=3 },
+                    new Product{ ProductId=3,CategoryId = 2,ProductName="Vazo",UnitPrice=15,UnitsInStock=6 }
 
             };
         }
@@ -69,7 +69,7 @@ namespace DataAccess.Concrete.InMemory
             Product productToUpdate = _products.SingleOrDefault(p => p.ProductId == product.ProductId);
             productToUpdate.ProductName = product.ProductName;
             productToUpdate.CategoryId = product.CategoryId;
-            productToUpdate.UnitInStock = product.UnitInStock;
+            productToUpdate.UnitsInStock = product.UnitsInStock;
             productToUpdate.UnitPrice = product.UnitPrice;
             _products.Remove(productToUpdate);
         }
