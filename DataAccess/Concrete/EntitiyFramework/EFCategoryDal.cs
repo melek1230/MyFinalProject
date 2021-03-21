@@ -1,4 +1,6 @@
-﻿using DataAccess.Abstract;
+﻿using Core.DataAccess.EntityFramework;
+using DataAccess.Abstract;
+using DataAccess.Concrete.EntitiyFramework;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -7,31 +9,8 @@ using System.Text;
 
 namespace DataAccess.Concrete
 {
-    public class EFCategoryDal : ICategoryDal
+    public class EFCategoryDal : EFEntityRepositoryBase<Category, NorthwindContext>, ICategoryDal
     {
-        public void Add(Category entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Category entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Category Get(Expression<Func<Category, bool>> filter)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Category> GetAll(Expression<Func<Category, bool>> filter = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpDate(Category entity)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

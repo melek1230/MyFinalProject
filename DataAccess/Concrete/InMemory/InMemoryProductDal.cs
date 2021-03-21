@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,20 +44,14 @@ namespace DataAccess.Concrete.InMemory
             return _products;
         }
 
-        public List<Product> GetAll(Expression<Func<ThreadStaticAttribute, bool>> filter = null)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public List<Product> GetAll(Expression<Func<Product, bool>> filter = null)
         {
             throw new NotImplementedException();
         }
 
-        public List<Product> GetAllByCategory(int categoryId)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public List<Product> GetAllByCategoryId(int CategoryId)
         {
@@ -64,20 +59,24 @@ namespace DataAccess.Concrete.InMemory
 
         }
 
-        public void Update(Product product)
+        public List<ProductDetailDto> GetProductDetails()
         {
-            Product productToUpdate = _products.SingleOrDefault(p => p.ProductId == product.ProductId);
-            productToUpdate.ProductName = product.ProductName;
-            productToUpdate.CategoryId = product.CategoryId;
-            productToUpdate.UnitsInStock = product.UnitsInStock;
-            productToUpdate.UnitPrice = product.UnitPrice;
-            _products.Remove(productToUpdate);
+            throw new NotImplementedException();
         }
 
         public void UpDate(Product entity)
         {
-            throw new NotImplementedException();
+            Product productToUpdate = _products.SingleOrDefault(p => p.ProductId == entity.ProductId);
+            productToUpdate.ProductName = entity.ProductName;
+            productToUpdate.CategoryId = entity.CategoryId;
+            productToUpdate.UnitsInStock = entity.UnitsInStock;
+            productToUpdate.UnitPrice = entity.UnitPrice;
+            _products.Remove(productToUpdate);
         }
+
+       
+
+
     }
        
     
